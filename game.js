@@ -29,7 +29,7 @@ const gameData = {
         }
     ],
         },
-          block_12: {
+          block_3: {
  dialog: [
                 {
                     name: "Character 1",
