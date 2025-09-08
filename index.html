@@ -1,136 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Novel - Alice's Story</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: #000;
-            font-family: 'Verdana', sans-serif;
-        }
-
-        /* Scalable Game Container */
-        #game-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transform-origin: top left;
-            width: 100vmin; /* Always fit smallest axis */
-            height: 56.25vmin; /* 16:9 ratio (9/16 = 0.5625) */
-            max-width: 100vmin;
-            max-height: 56.25vmin;
-        }
-
-        #main {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background: #000;
-        }
-
-        .layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        #background-layer {
-            z-index: 1;
-            background-size: cover;
-            background-position: center;
-        }
-
-        #character-layer {
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        #character-layer img {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            max-height: 80%;
-            max-width: 100%;
-            height: auto;
-            width: auto;
-        }
-
-        #dialog-layer {
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 2vmin;
-            box-sizing: border-box;
-        }
-
-        #dialog-box {
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 2vmin 3vmin;
-            border-radius: 2vmin;
-            max-width: 80%;
-            margin: 0 auto 3vmin;
-            box-shadow: 0 0.5vmin 1vmin rgba(0,0,0,0.5);
-            font-size: 1.8vmin;
-            line-height: 1.5;
-            display: none;
-        }
-
-        #character-name {
-            color: #ffcc00;
-            font-weight: bold;
-            font-size: 1.4em;
-            margin-bottom: 0.5vmin;
-        }
-
-        #choices-container {
-            text-align: center;
-        }
-
-        #choices-container button {
-            cursor: pointer;
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            border-radius: 1vmin;
-            padding: 1.2vmin 3vmin;
-            font-size: 1.6vmin;
-            margin: 1vmin auto;
-            display: block;
-            transition: background 0.2s;
-        }
-
-        #choices-container button:hover {
-            background: #ff5252;
-        }
-
-        /* Hide scrollbars */
-        body::-webkit-scrollbar { display: none; }
-        body { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
+    <title>Visual Novel Engine</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+        <meta charset='UTF-8'><meta name='viewport' content='initial-scale=1,width=device-width,height=device-height,viewport-fit=cover,maximum-scale=1,user-scalable=no'>
 </head>
 <body>
-    <div id="game-container">
-        <div id="main"></div>
-    </div>
 
+    <div id="main"></div>
+    
+    <!-- Load game data first -->
     <script src="game.js"></script>
+    <!-- Then load the engine -->
     <script src="engine.js"></script>
+    <script src="screen.js"></script>
+    <script src="render.js"></script>
+    <script src="render2.js"></script>
 </body>
 </html>
